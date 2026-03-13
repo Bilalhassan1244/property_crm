@@ -38,7 +38,7 @@ export default function DatePicker({
           <Icon
             icon="fe:calendar"
             className="text-primary"
-            style={{ fontSize: "22px", cursor: "pointer" }}
+            style={{ fontSize: "24px", cursor: "pointer" }}
           />
         }
       />

@@ -6,7 +6,7 @@ export default function BusinessIntelligence() {
     window.scroll(0, 0);
   });
   return (
-    <p className="w-full text-2xl font-medium md:w-max text-heading">
+    <p className="w-full text-2xl leading-[100%] font-medium md:w-max text-heading">
       Business Intelligence
     </p>
   );

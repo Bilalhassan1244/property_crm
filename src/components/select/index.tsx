@@ -71,6 +71,7 @@ export default function CustomSelect({
 
         <Icon
           icon="icon-park-outline:up"
+          style={{ fontSize: "20px", cursor: "pointer" }}
           className={`transition-transform duration-200 text-primary ${
             isOpen ? "rotate-180" : "rotate-0"
           }`}

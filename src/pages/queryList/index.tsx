@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import SearchInput from "../../components/search/searchInput";
 import SearchSelect from "../../components/search/searchSelect";
 import { Icon } from "@iconify/react";
-import CustomTable from "../../components/cstomTable";
+import CustomTable from "../../components/customTable";
 import { Checkbox } from "antd";
 import CustomInput from "../../components/customInput";
 import DatePicker from "../../components/datePicker";
@@ -26,6 +26,7 @@ const StatusOption = ["Approved", "Pending", "In-Progress"];
 export default function QueryList() {
   const [queries, setQueries] = useState<QueryRow[]>([]);
   const [openModal, setOpenModal] = useState(false);
+  const [deleteModel, setDeleteModel] = useState(false);
   const [editingQuery, setEditingQuery] = useState<QueryRow | null>(null);
   const [searchText, setSearchText] = useState("");
   const [filterStatus, setFilterStatus] = useState<string | null>(null);
@@ -113,7 +114,7 @@ export default function QueryList() {
       <Icon
         icon="mingcute:delete-line"
         className="text-xl cursor-pointer text-[#E90761]"
-        onClick={() => handleDelete(row.id)}
+        onClick={() => setDeleteModel(true)}
       />
     </div>,
   ]);
@@ -146,7 +147,24 @@ export default function QueryList() {
         </div>
       </div>
 
-      <div className="flex justify-end mt-4">
+      <div className="flex flex-wrap justify-between gap-4 mt-4">
+        <div className="flex flex-wrap items-center w-full gap-4 md:w-auto">
+          <button className="flex items-center justify-center w-10 h-10 gap-2 text-white rounded-md cursor-pointer bg-[#E90761]">
+            <Icon icon="material-symbols:delete-outline" className="text-2xl" />
+          </button>
+          <button className="flex items-center justify-center h-10 gap-2 bg-white rounded-md cursor-pointer text-heading w-50 md:w-41">
+            Update Excel
+          </button>{" "}
+          <button className="flex items-center justify-center  h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-25 bg-[#21B209]">
+            PDF
+          </button>{" "}
+          <button className="flex items-center justify-center h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-25 bg-[#21B209]">
+            Excel
+          </button>{" "}
+          <button className="flex items-center justify-center h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-25 bg-[#21B209]">
+            Copy
+          </button>
+        </div>
         <button
           onClick={() => {
             setEditingQuery(null);
@@ -163,7 +181,7 @@ export default function QueryList() {
         <p className="text-sm font-medium text-light leading-[100%]">
           Query List
         </p>
-        <div className="w-full mt-4 h-[calc(100vh-230px)] bg-white rounded-lg">
+        <div className="w-full mt-4 h-auto  md:h-[calc(100vh-230px)] bg-white rounded-lg border border-primary">
           <CustomTable
             titles={titles}
             data={tableData}
@@ -283,6 +301,50 @@ export default function QueryList() {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {deleteModel && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+          <div className="relative h-auto mx-5 overflow-x-auto bg-white shadow-xl rounded-xl xl:mx-0 w-125">
+            <div className="bg-[#E90761]/10 p-4">
+              <p className="text-base text-heading">Delete Queries</p>
+            </div>
+
+            <div className="flex justify-center my-6">
+              <div className="flex justify-center items-center bg-[#E90761]/10 h-w-30 w-w-30 rounded-full">
+                <div className="flex justify-center items-center  bg-[#E90761] h-20 w-20 rounded-full">
+                  <Icon
+                    icon="mingcute:delete-line"
+                    className="text-4xl text-white"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="text-center">
+              <p className="mt-5 text-base font-normal text-heading">
+                Are you sure to delete this queries?
+              </p>
+              <p className="mb-6 text-[#7D7D7D]/40">
+                Once you delete it will not restored
+              </p>
+            </div>
+            <div className="flex justify-end gap-4 p-4 mt-5">
+              <button
+                onClick={() => setDeleteModel(false)}
+                className="px-7 h-12 py-2 font-medium bg-[#FDE6EF] rounded-md"
+              >
+                Cancel
+              </button>
+              <button
+                // onClick={handleDelete}
+                className="px-7 h-12 py-2 bg-[#E90761] font-medium text-white rounded-md"
+              >
+                {/* {isloadingDelete ? <Spin indicator={antIcon} /> : "Delete"} */}
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       )}

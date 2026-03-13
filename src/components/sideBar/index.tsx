@@ -57,7 +57,7 @@ export default function SideBar({ link }: any) {
       {isOpen ? (
         <button
           style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
-          className="fixed z-50 p-3 text-xl bg-white rounded-full xl:hidden top-4 right-4 text-primary"
+          className="fixed p-3 text-xl bg-white rounded-full z-9999 xl:hidden top-4 right-4 text-primary"
           onClick={() => setIsOpen(!isOpen)}
         >
           <Icon icon="iconamoon:close-bold" className="2xl" />
@@ -77,8 +77,8 @@ export default function SideBar({ link }: any) {
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
-        className={`fixed xl:relative top-0 left-0 h-full overflow-y-auto xl:h-[calc(100vh-32px)] bg-[#F7F7F7] xl:w-[320px] lg:w-1-0 md:w-80 sm:w-90 w-[320px]  flex flex-col xl:rounded-xl rounded-tr-xl rounded-br-xl transition-transform z-50
-          ${isOpen ? "translate-x-0" : "-translate-x-full"} xl:translate-x-0`}
+        className={`fixed xl:relative shrink-0 top-0 left-0 h-full overflow-y-auto xl:h-[calc(100vh-32px)] bg-[#F7F7F7] xl:w-65 lg:w-70 md:w-80 sm:w-90 w-[320px] flex flex-col xl:rounded-xl rounded-tr-xl rounded-br-xl transition-transform z-40
+    ${isOpen ? "translate-x-0" : "-translate-x-full"} xl:translate-x-0`}
       >
         <div className="flex items-center gap-2 p-2">
           <img src={Logo} className="h-auto w-15" alt="logo" />
@@ -86,8 +86,8 @@ export default function SideBar({ link }: any) {
             Property <span className="text-[#FF7631]">CRM</span>
           </p>
         </div>
-        <div className="flex items-center justify-between h-16 p-2 mt-4 bg-white rounded-lg">
-          <div className="bg-white rounded-[9px]  flex gap-2 items-center">
+        <div className="flex items-center justify-between h-16 p-2 mt-4 bg-white">
+          <div className="flex items-center gap-2 bg-white">
             <Avatar size={40} src={Bilal} />
             <div>
               <p className="text-primary capitalize text-xs leading-3.5 truncate">
@@ -103,14 +103,14 @@ export default function SideBar({ link }: any) {
             <Notification />
           </div>
         </div>
-        <p className="text-[#979797] text-sm font-normal px-2 mt-7.5">MENU</p>
+        <p className="text-[#979797] text-sm font-normal px-2 mt-4">MENU</p>
 
         <nav
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",
           }}
-          className="flex xl:h-[60%] 2xl:h-[70%] overflow-y-auto p-2 flex-col gap-0 mt-4"
+          className="flex  xl:h-400 2xl:h-[70%] overflow-y-auto p-2 flex-col gap-0"
         >
           {link.map((item: any, index: number) => {
             const hasChildren = item.children && item.children.length > 0;
@@ -232,7 +232,7 @@ export default function SideBar({ link }: any) {
             scrollbarWidth: "none",
             msOverflowStyle: "none",
           }}
-          className="flex xl:h-[70%] 2xl:h-[80%] overflow-y-auto p-2 flex-col gap-0 mt-4"
+          className="flex xl:h-[70%] 2xl:h-[80%] overflow-y-auto p-2 flex-col gap-0 "
         >
           {defaultLinks22.map((item: any, index: number) => {
             const hasChildren = item.children && item.children.length > 0;
@@ -350,7 +350,7 @@ export default function SideBar({ link }: any) {
         <button
           disabled={loading}
           onClick={handleLogout}
-          className="flex items-center gap-3 pl-5 mt-auto mb-2 text-base font-normal cursor-pointer text-heading"
+          className="flex items-center gap-3 py-3 mb-2 text-base font-normal border-t cursor-pointer mt-6uto pl-7 border-light/50 text-heading"
         >
           <Icon
             icon="clarity:logout-solid"
@@ -364,7 +364,7 @@ export default function SideBar({ link }: any) {
 
       {isOpen && (
         <div
-          className="fixed inset-0 z-30 bg-black opacity-30 xl:hidden"
+          className="fixed inset-0 z-30 xl:hidden"
           onClick={() => setIsOpen(false)}
         ></div>
       )}

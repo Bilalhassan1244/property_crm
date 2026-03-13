@@ -33,7 +33,7 @@ const CustomTable: React.FC<CustomTableProps> = ({
       className="flex-1 w-full "
     >
       <div className="w-full overflow-x-auto">
-        <table className="w-full border-separate border-spacing-0 min-w-200 rounded-xl">
+        <table className="w-full border-separate border-spacing-0 min-w-300 rounded-xl">
           <thead className="sticky top-0 z-10 h-14 ">
             <tr>
               {titles?.map((title, index) => (

@@ -4,9 +4,9 @@ import { defaultLinks } from "../utils/constant";
 
 export default function Pages() {
   return (
-    <div className="flex w-full h-screen gap-4 p-2 md:p-4">
-      <Sidebar link={defaultLinks} />
-      <div className="w-full h-full p-4 bg-[#F7F7F7] rounded-xl ">
+    <div className="flex w-full h-auto gap-4 p-2 lg:h-screen md:p-4">
+      <Sidebar link={defaultLinks} /> {/* Sidebar stays fixed width */}
+      <div className="flex-1 h-full p-4 bg-[#F7F7F7] rounded-xl overflow-hidden">
         <MainRoutes />
       </div>
     </div>
