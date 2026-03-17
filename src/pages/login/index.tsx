@@ -160,7 +160,7 @@ const Login = () => {
             <button
               disabled={loading}
               type="submit"
-              className="bg-primary cursor-pointer text-white w-full h-13.75 mt-5 rounded-md text-xl font-medium flex items-center justify-center"
+              className="bg-primary cursor-pointer font-medium text-white w-full h-13.75 mt-5 rounded-md text-xl font-medium flex items-center justify-center"
             >
               {loading ? <Spin indicator={antIcon} /> : "Login"}
             </button>

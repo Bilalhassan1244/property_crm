@@ -113,9 +113,9 @@ export default function Todos() {
       </div>
       <div className="mt-4 bg-[#E5EBF7] w-full rounded-xl p-3">
         <p className="text-sm font-medium text-light leading-[100%]">
-          Query List
+          Todo’s List
         </p>
-        <div className="w-full mt-4 h-auto  md:h-[calc(100vh-230px)] bg-white rounded-lg border border-primary">
+        <div className="w-full mt-4 h-auto 2xl:h-[76vh] xl:h-[64.5vh] bg-white rounded-lg border border-primary">
           <CustomTable
             titles={titles}
             data={tableData}
@@ -218,13 +218,13 @@ export default function Todos() {
                 <button
                   type="button"
                   onClick={() => setOpenModal(false)}
-                  className="h-13.75 md:w-25 w-full bg-[#F2FAFD] text-heading rounded-md gap-3 cursor-pointer flex justify-center items-center"
+                  className="h-13.75 md:w-25 w-full bg-[#F2FAFD] font-medium text-heading rounded-md gap-3 cursor-pointer flex justify-center items-center"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="h-13.75 md:w-50 w-full bg-primary text-white rounded-md gap-3 cursor-pointer flex justify-center items-center"
+                  className="h-13.75 md:w-50 w-full bg-primary font-medium text-white rounded-md gap-3 cursor-pointer flex justify-center items-center"
                   onClick={(e) => {
                     e.preventDefault();
                     console.log("Save query", editingQuery);

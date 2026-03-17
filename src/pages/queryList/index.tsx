@@ -152,16 +152,16 @@ export default function QueryList() {
           <button className="flex items-center justify-center w-10 h-10 gap-2 text-white rounded-md cursor-pointer bg-[#E90761]">
             <Icon icon="material-symbols:delete-outline" className="text-2xl" />
           </button>
-          <button className="flex items-center justify-center h-10 gap-2 bg-white rounded-md cursor-pointer text-heading w-50 md:w-41">
+          <button className="flex items-center justify-center font-medium h-10 gap-2 bg-white rounded-md cursor-pointer text-heading w-50 md:w-41">
             Update Excel
           </button>{" "}
-          <button className="flex items-center justify-center  h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-25 bg-[#21B209]">
+          <button className="flex items-center justify-center font-medium h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-25 bg-[#21B209]">
             PDF
           </button>{" "}
-          <button className="flex items-center justify-center h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-25 bg-[#21B209]">
+          <button className="flex items-center justify-center font-medium h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-25 bg-[#21B209]">
             Excel
           </button>{" "}
-          <button className="flex items-center justify-center h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-25 bg-[#21B209]">
+          <button className="flex items-center justify-center font-medium h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-25 bg-[#21B209]">
             Copy
           </button>
         </div>
@@ -170,7 +170,7 @@ export default function QueryList() {
             setEditingQuery(null);
             setOpenModal(true);
           }}
-          className="flex items-center justify-center w-full h-10 gap-2 text-white rounded-md cursor-pointer md:w-40 bg-primary"
+          className="flex items-center justify-center font-medium w-full h-10 gap-2 text-white rounded-md cursor-pointer md:w-40 bg-primary"
         >
           <Icon icon="material-symbols:add-rounded" className="text-xl" />
           <p className="text-base font-medium">Add New</p>

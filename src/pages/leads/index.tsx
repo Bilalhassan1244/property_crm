@@ -98,13 +98,13 @@ export default function Leads() {
           />
         </div>
       </div>{" "}
-      <div className="flex flex-wrap h-auto gap-3 mt-6 overflow-auto">
+      <div className="flex flex-wrap h-auto gap-3 mt-4 overflow-auto">
         <div
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          className="w-full md:w-[calc(20%-6px)] h-full md:h-[calc(100vh-130px)] overflow-auto bg-white rounded-xl  "
+          className="w-full md:w-[calc(20%-6px)] h-full md:h-[calc(100vh-120px)] overflow-auto bg-white rounded-xl  "
         >
           <div className="p-6">
-            <button className="flex items-center justify-center w-full h-10 gap-3 text-white rounded-lg cursor-pointer bg-primary">
+            <button className="flex items-center font-medium justify-center w-full h-10 gap-3 text-white rounded-lg cursor-pointer bg-primary">
               <Icon icon="material-symbols:add-rounded" className="text-2xl" />{" "}
               New Lead
             </button>
@@ -127,14 +127,14 @@ export default function Leads() {
             ))}
           </div>
           <div className="p-6">
-            <button className="w-full h-10 cursor-pointer text-white rounded-lg bg-[#E90761]">
+            <button className="w-full h-10 font-medium cursor-pointer text-white rounded-lg bg-[#E90761]">
               Reset
             </button>
           </div>
         </div>
-        <div className="w-full md:w-[calc(80%-6px)] bg-[#E5EBF7] h-auto  md:h-[calc(100vh-128px)] rounded-xl p-3 ">
+        <div className="w-full md:w-[calc(80%-6px)] bg-[#E5EBF7] h-auto  md:h-[calc(100vh-120px)] rounded-xl p-3 ">
           <p className="text-sm font-medium text-light ">Leads List</p>
-          <div className="mt-4 bg-white border rounded-md border-primary">
+          <div className="mt-4 bg-white border 2xl:h-[81vh] xl:h-[71.5vh] rounded-md border-primary">
             <CustomTable titles={titles} data={tableData} />
           </div>
         </div>

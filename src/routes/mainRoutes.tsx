@@ -1,6 +1,8 @@
 import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import Logo from "../assets/PropertyCRM Logo 1.png";
+import Analytics from "../pages/Analytics";
+import ServicesList from "../pages/servicesList";
 const QueryList = lazy(() => import("../pages/queryList"));
 const Leads = lazy(() => import("../pages/leads"));
 const Tasks = lazy(() => import("../pages/tasks"));
@@ -32,6 +34,8 @@ export default function MainRoutes() {
         <Route path="/todos" element={<Todos />} />
         <Route path="/contacts" element={<Contact />} />
         <Route path="/define" element={<Define />} />
+        <Route path="/servicesList" element={<ServicesList />} />
+        <Route path="/analytics" element={<Analytics />} />
       </Routes>
     </Suspense>
   );

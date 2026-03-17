@@ -45,27 +45,40 @@ export default function Contact() {
   });
   return (
     <>
-      {" "}
-      <p className="w-full text-2xl font-medium md:w-max text-heading">
-        Contact
-      </p>
-      <div className="flex flex-wrap items-center gap-3 mt-4">
-        <div className="w-full md:w-48">
-          <SearchInput name="Name" />
-        </div>{" "}
-        <div className="w-full md:w-48">
-          <SearchInput name="Phone No" />
-        </div>{" "}
-        <div className="w-full md:w-48">
-          <SearchInput name="Email" />
+      <div className="flex flex-wrap gap-3 justify-between items-center">
+        <p className="w-full text-2xl font-medium md:w-max text-heading">
+          Contact List
+        </p>{" "}
+        <button className="w-full flex justify-center font-medium items-center h-10 text-white rounded-lg cursor-pointer bg-primary md:w-45">
+          <Icon
+            icon="material-symbols:add-rounded"
+            className="text-base test-white"
+          />{" "}
+          Add New
+        </button>
+      </div>
+      <div className="flex flex-wrap items-center gap-3 justify-between mt-4">
+        <div className="flex flex-wrap items-center gap-3">
+          <button className="w-full h-10 text-heading font-medium rounded-lg cursor-pointer bg-white md:w-45">
+            Upload Excel
+          </button>
+          <div className="w-full md:w-48 2xl:w-70">
+            <SearchInput name="Name" placeholder="Search" />
+          </div>{" "}
+          <div className="w-full md:w-48 2xl:w-70">
+            <SearchInput name="Phone No" placeholder="Search" />
+          </div>{" "}
+          <div className="w-full md:w-48 2xl:w-70">
+            <SearchInput name="Email" placeholder="Search" />
+          </div>
         </div>
-        <button className="w-full h-10 text-white rounded-lg cursor-pointer bg-primary md:w-45">
+        <button className="w-full h-10 text-white font-medium rounded-lg cursor-pointer bg-[#2DA219] md:w-45">
           Search
         </button>
       </div>
-      <div className="w-full bg-[#E5EBF7] h-auto mt-4  md:h-[calc(100vh-168px)] rounded-xl p-3 ">
+      <div className="w-full bg-[#E5EBF7] h-auto mt-4 rounded-xl p-3 ">
         <p className="text-sm font-medium text-light ">Contact List</p>
-        <div className="mt-2 bg-white border rounded-md border-primary">
+        <div className="mt-2 2xl:h-[76vh] xl:h-[64.5vh] bg-white border rounded-md border-primary">
           <CustomTable titles={titles} data={tableData} />
         </div>
       </div>

@@ -41,6 +41,16 @@ export const defaultLinks: SidebarLink[] = [
     path: "/contacts",
     icon: "ph:scroll-fill",
   },
+  {
+    name: "Services List",
+    path: "/servicesList",
+    icon: "ic:round-design-services",
+  },
+  {
+    name: "Analytics",
+    path: "/analytics",
+    icon: "ic:baseline-analytics",
+  },
 ];
 export const defaultLinks22: any = [
   {
