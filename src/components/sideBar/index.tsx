@@ -77,7 +77,7 @@ export default function SideBar({ link }: any) {
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
-        className={`fixed xl:relative shrink-0 top-0 left-0 h-full overflow-y-auto xl:h-[calc(100vh-32px)] bg-[#F7F7F7] xl:w-65 lg:w-70 md:w-80 sm:w-90 w-[320px] flex flex-col xl:rounded-xl rounded-tr-xl rounded-br-xl transition-transform z-40
+        className={`fixed xl:relative shrink-0 top-0 left-0 h-full overflow-y-auto xl:h-[calc(100vh-32px)] bg-[#F7F7F7] xl:w-65 2xl:w-70 lg:w-70 md:w-80 sm:w-90 w-[320px] flex flex-col xl:rounded-xl rounded-tr-xl rounded-br-xl transition-transform z-40
     ${isOpen ? "translate-x-0" : "-translate-x-full"} xl:translate-x-0`}
       >
         <div className="flex items-center gap-2 p-2">
@@ -110,7 +110,7 @@ export default function SideBar({ link }: any) {
             scrollbarWidth: "none",
             msOverflowStyle: "none",
           }}
-          className="flex  xl:h-400 2xl:h-[70%] overflow-y-auto p-2 flex-col gap-0"
+          className="flex 2xl:h-300 xl:h-400 overflow-y-auto p-2 flex-col gap-0"
         >
           {link.map((item: any, index: number) => {
             const hasChildren = item.children && item.children.length > 0;

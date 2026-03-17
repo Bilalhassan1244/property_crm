@@ -7,6 +7,7 @@ import { Checkbox } from "antd";
 import CustomInput from "../../components/customInput";
 import DatePicker from "../../components/datePicker";
 import CustomSelect from "../../components/select";
+import QueryUpload from "../../components/queryUpload";
 
 interface QueryRow {
   serial: string;
@@ -26,6 +27,7 @@ const StatusOption = ["Approved", "Pending", "In-Progress"];
 export default function QueryList() {
   const [queries, setQueries] = useState<QueryRow[]>([]);
   const [openModal, setOpenModal] = useState(false);
+  const [openUpload, setOPenUpload] = useState(false);
   const [deleteModel, setDeleteModel] = useState(false);
   const [editingQuery, setEditingQuery] = useState<QueryRow | null>(null);
   const [searchText, setSearchText] = useState("");
@@ -38,6 +40,9 @@ export default function QueryList() {
     fetchQueries();
   }, []);
 
+  const closeModel = () => {
+    setOPenUpload(false);
+  };
   const fetchQueries = async () => {
     setLoading(true);
     try {
@@ -152,16 +157,21 @@ export default function QueryList() {
           <button className="flex items-center justify-center w-10 h-10 gap-2 text-white rounded-md cursor-pointer bg-[#E90761]">
             <Icon icon="material-symbols:delete-outline" className="text-2xl" />
           </button>
-          <button className="flex items-center justify-center font-medium h-10 gap-2 bg-white rounded-md cursor-pointer text-heading w-50 md:w-41">
+          <button
+            onClick={() => {
+              setOPenUpload(true);
+            }}
+            className="flex items-center justify-center h-10 gap-2 font-medium bg-white rounded-md cursor-pointer text-heading w-80 md:w-41"
+          >
             Update Excel
           </button>{" "}
-          <button className="flex items-center justify-center font-medium h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-25 bg-[#21B209]">
+          <button className="flex items-center justify-center font-medium h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 min-w-25 w-auto bg-[#21B209]">
             PDF
           </button>{" "}
-          <button className="flex items-center justify-center font-medium h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-25 bg-[#21B209]">
+          <button className="flex items-center justify-center font-medium h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-auto min-w-25 bg-[#21B209]">
             Excel
           </button>{" "}
-          <button className="flex items-center justify-center font-medium h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-25 bg-[#21B209]">
+          <button className="flex items-center justify-center font-medium h-10 gap-2 text-white rounded-md cursor-pointer md:w-16 w-auto min-w-25 bg-[#21B209]">
             Copy
           </button>
         </div>
@@ -170,7 +180,7 @@ export default function QueryList() {
             setEditingQuery(null);
             setOpenModal(true);
           }}
-          className="flex items-center justify-center font-medium w-full h-10 gap-2 text-white rounded-md cursor-pointer md:w-40 bg-primary"
+          className="flex items-center justify-center w-full h-10 gap-2 font-medium text-white rounded-md cursor-pointer md:w-40 bg-primary"
         >
           <Icon icon="material-symbols:add-rounded" className="text-xl" />
           <p className="text-base font-medium">Add New</p>
@@ -306,7 +316,7 @@ export default function QueryList() {
       )}
 
       {deleteModel && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
           <div className="relative h-auto mx-5 overflow-x-auto bg-white shadow-xl rounded-xl xl:mx-0 w-125">
             <div className="bg-[#E90761]/10 p-4">
               <p className="text-base text-heading">Delete Queries</p>
@@ -346,6 +356,11 @@ export default function QueryList() {
               </button>
             </div>
           </div>
+        </div>
+      )}
+      {openUpload && (
+        <div>
+          <QueryUpload closeModle={closeModel} />
         </div>
       )}
     </>

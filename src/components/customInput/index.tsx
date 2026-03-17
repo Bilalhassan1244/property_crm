@@ -4,12 +4,14 @@ interface CustomInputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   label?: string;
   placeholder?: string;
+  height?: string;
 }
 
 export default function CustomInput({
   className = "",
   label = "Enter text...",
   placeholder = "",
+  height,
   ...props
 }: CustomInputProps) {
   return (
@@ -20,7 +22,9 @@ export default function CustomInput({
       <input
         {...props}
         placeholder={placeholder}
-        className={`rounded-md w-full h-14 px-3 placeholder:text-light py-2 text-sm outline-none border-primary border-[0.5px] ${className}`}
+        className={`rounded-md w-full ${
+          height ? "h-10" : "h-14"
+        } px-3 placeholder:text-light py-2 text-sm outline-none border-primary border-[0.5px] ${className}`}
       />
     </div>
   );
